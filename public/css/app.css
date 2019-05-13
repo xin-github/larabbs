@@ -16477,6 +16477,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #000;
+  /* User register page */
 }
 
 .footer .container {
@@ -16491,5 +16492,12 @@ body {
 
 .footer .container p a {
   color: inherit;
+}
+
+.footer .register-page img.captcha {
+  cursor: pointer;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 3px;
 }
 
