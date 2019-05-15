@@ -187,7 +187,7 @@ module.exports = function xhrAdapter(config) {
       request = null;
     };
 
-    // Handle low level network errors
+    // Handlers low level network errors
     request.onerror = function handleError() {
       // Real errors are hidden from us by the browser
       // onerror should only fire if it's a network error
@@ -197,7 +197,7 @@ module.exports = function xhrAdapter(config) {
       request = null;
     };
 
-    // Handle timeout
+    // Handlers timeout
     request.ontimeout = function handleTimeout() {
       reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
         request));
@@ -253,7 +253,7 @@ module.exports = function xhrAdapter(config) {
       }
     }
 
-    // Handle progress if needed
+    // Handlers progress if needed
     if (typeof config.onDownloadProgress === 'function') {
       request.addEventListener('progress', config.onDownloadProgress);
     }
@@ -264,7 +264,7 @@ module.exports = function xhrAdapter(config) {
     }
 
     if (config.cancelToken) {
-      // Handle cancellation
+      // Handlers cancellation
       config.cancelToken.promise.then(function onCanceled(cancel) {
         if (!request) {
           return;
@@ -3567,7 +3567,7 @@ __webpack_require__.r(__webpack_exports__);
 
     _proto._getPlacement = function _getPlacement() {
       var $parentDropdown = $(this._element.parentNode);
-      var placement = AttachmentMap.BOTTOM; // Handle dropup
+      var placement = AttachmentMap.BOTTOM; // Handlers dropup
 
       if ($parentDropdown.hasClass(ClassName$4.DROPUP)) {
         placement = AttachmentMap.TOP;
@@ -5652,7 +5652,7 @@ __webpack_require__.r(__webpack_exports__);
         $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handlers special case when .nav-link is inside .nav-item
 
         $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_ITEMS).children(Selector$8.NAV_LINKS).addClass(ClassName$8.ACTIVE);
       }
@@ -6517,7 +6517,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		length = arguments.length,
 		deep = false;
 
-	// Handle a deep copy situation
+	// Handlers a deep copy situation
 	if ( typeof target === "boolean" ) {
 		deep = target;
 
@@ -6526,7 +6526,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		i++;
 	}
 
-	// Handle case when target is a string or something (possible in deep copy)
+	// Handlers case when target is a string or something (possible in deep copy)
 	if ( typeof target !== "object" && !isFunction( target ) ) {
 		target = {};
 	}
@@ -9216,7 +9216,7 @@ var rootjQuery,
 		// so migrate can support jQuery.sub (gh-2101)
 		root = root || rootjQuery;
 
-		// Handle HTML strings
+		// Handlers HTML strings
 		if ( typeof selector === "string" ) {
 			if ( selector[ 0 ] === "<" &&
 				selector[ selector.length - 1 ] === ">" &&
@@ -9633,7 +9633,7 @@ jQuery.Callbacks = function( options ) {
 					while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
 						list.splice( index, 1 );
 
-						// Handle firing indexes
+						// Handlers firing indexes
 						if ( index <= firingIndex ) {
 							firingIndex--;
 						}
@@ -9848,7 +9848,7 @@ jQuery.extend( {
 											typeof returned === "function" ) &&
 										returned.then;
 
-									// Handle a returned thenable
+									// Handlers a returned thenable
 									if ( isFunction( then ) ) {
 
 										// Special processors (notify) just wait for resolution
@@ -9874,7 +9874,7 @@ jQuery.extend( {
 											);
 										}
 
-									// Handle all other returned values
+									// Handlers all other returned values
 									} else {
 
 										// Only substitute handlers pass on context
@@ -9994,7 +9994,7 @@ jQuery.extend( {
 			// promise.fail = list.add
 			promise[ tuple[ 1 ] ] = list.add;
 
-			// Handle state
+			// Handlers state
 			if ( stateString ) {
 				list.add(
 					function() {
@@ -10154,7 +10154,7 @@ jQuery.extend( {
 	// the ready event fires. See #6781
 	readyWait: 1,
 
-	// Handle when the DOM is ready
+	// Handlers when the DOM is ready
 	ready: function( wait ) {
 
 		// Abort if there are pending holds or we're already ready
@@ -10191,7 +10191,7 @@ function completed() {
 if ( document.readyState === "complete" ||
 	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
 
-	// Handle it asynchronously to allow scripts the opportunity to delay ready
+	// Handlers it asynchronously to allow scripts the opportunity to delay ready
 	window.setTimeout( jQuery.ready );
 
 } else {
@@ -10342,12 +10342,12 @@ Data.prototype = {
 		var prop,
 			cache = this.cache( owner );
 
-		// Handle: [ owner, key, value ] args
+		// Handlers: [ owner, key, value ] args
 		// Always use camelCase key (gh-2257)
 		if ( typeof data === "string" ) {
 			cache[ camelCase( data ) ] = value;
 
-		// Handle: [ owner, { properties } ] args
+		// Handlers: [ owner, { properties } ] args
 		} else {
 
 			// Copy the properties one-by-one to the cache object
@@ -11318,7 +11318,7 @@ jQuery.event = {
 			};
 		}
 
-		// Handle multiple events separated by a space
+		// Handlers multiple events separated by a space
 		types = ( types || "" ).match( rnothtmlwhite ) || [ "" ];
 		t = types.length;
 		while ( t-- ) {
@@ -14480,12 +14480,12 @@ jQuery.fn.extend( {
 
 				ret = elem.value;
 
-				// Handle most common string cases
+				// Handlers most common string cases
 				if ( typeof ret === "string" ) {
 					return ret.replace( rreturn, "" );
 				}
 
-				// Handle cases where value is null/undef or number
+				// Handlers cases where value is null/undef or number
 				return ret == null ? "" : ret;
 			}
 
@@ -15535,7 +15535,7 @@ jQuery.extend( {
 		deferred.promise( jqXHR );
 
 		// Add protocol if not provided (prefilters might expect it)
-		// Handle falsy url in the settings object (#10093: consistency with old signature)
+		// Handlers falsy url in the settings object (#10093: consistency with old signature)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || location.href ) + "" )
 			.replace( rprotocol, location.protocol + "//" );
@@ -15823,7 +15823,7 @@ jQuery.extend( {
 			if ( fireGlobals ) {
 				globalEventContext.trigger( "ajaxComplete", [ jqXHR, s ] );
 
-				// Handle the global AJAX counter
+				// Handlers the global AJAX counter
 				if ( !( --jQuery.active ) ) {
 					jQuery.event.trigger( "ajaxStop" );
 				}
@@ -16153,7 +16153,7 @@ jQuery.ajaxSetup( {
 	}
 } );
 
-// Handle cache's special case and crossDomain
+// Handlers cache's special case and crossDomain
 jQuery.ajaxPrefilter( "script", function( s ) {
 	if ( s.cache === undefined ) {
 		s.cache = false;
@@ -16222,7 +16222,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 				rjsonp.test( s.data ) && "data"
 		);
 
-	// Handle iff the expected data type is "jsonp" or we have a parameter to set
+	// Handlers iff the expected data type is "jsonp" or we have a parameter to set
 	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
 		// Get callback name, remembering preexisting value associated with it
@@ -16712,7 +16712,7 @@ jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 	"change select submit keydown keypress keyup contextmenu" ).split( " " ),
 	function( i, name ) {
 
-	// Handle event binding
+	// Handlers event binding
 	jQuery.fn[ name ] = function( data, fn ) {
 		return arguments.length > 0 ?
 			this.on( name, null, data, fn ) :
@@ -27295,7 +27295,7 @@ return jQuery;
             return leadingEdge(lastCallTime);
           }
           if (maxing) {
-            // Handle invocations in a tight loop.
+            // Handlers invocations in a tight loop.
             timerId = setTimeout(timerExpired, wait);
             return invokeFunc(lastCallTime);
           }
@@ -34610,11 +34610,11 @@ function getBoundaries(popper, reference, padding, boundariesElement) {
   var boundaries = { top: 0, left: 0 };
   var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
 
-  // Handle viewport case
+  // Handlers viewport case
   if (boundariesElement === 'viewport') {
     boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
   } else {
-    // Handle other cases based on DOM element used as boundaries
+    // Handlers other cases based on DOM element used as boundaries
     var boundariesNode = void 0;
     if (boundariesElement === 'scrollParent') {
       boundariesNode = getScrollParent(getParentNode(reference));

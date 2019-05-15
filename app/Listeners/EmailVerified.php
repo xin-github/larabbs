@@ -19,7 +19,7 @@ class EmailVerified
     }
 
     /**
-     * Handle the event.
+     * Handlers the event.
      *
      * @param  Verified  $event
      * @return void

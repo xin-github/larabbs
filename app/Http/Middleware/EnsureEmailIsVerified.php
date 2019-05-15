@@ -7,7 +7,7 @@ use Closure;
 class EnsureEmailIsVerified
 {
     /**
-     * Handle an incoming request.
+     * Handlers an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
